@@ -10,6 +10,30 @@ namespace LeetCode_CS.Easy
     public class Easy_Test
     {
         [TestMethod()]
+        public void LC0198_Rob_Test()
+        {
+            List<(int[], int)> cases = new List<(int[], int)>();
+            cases.Add((new int[] { 1, 2, 3, 1 } , 4));
+            cases.Add((new int[] { 2, 7, 9, 3, 1 },12));
+
+            LC0198_HouseRobber student = new LC0198_HouseRobber();
+
+            int[] dataInput;
+            int expectedOutput, receivedOutput;
+
+            foreach( (int[],int) c in cases)
+            {
+                (dataInput, expectedOutput) = c;
+
+                receivedOutput = student.Rob(dataInput);
+                Assert.AreEqual(expectedOutput, receivedOutput);
+                
+
+            }
+
+        }
+
+        [TestMethod()]
         public void Reverse_Test()
         {
             List<(int, int)> cases = new List<(int, int)>();
@@ -32,9 +56,6 @@ namespace LeetCode_CS.Easy
             }
 
         }
-
-
-
 
         [TestMethod()]
         public void numJewelsInStones_Test()
